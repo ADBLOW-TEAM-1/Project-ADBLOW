@@ -2,7 +2,7 @@
 var positionBtn = $('#location-btn')
 var latitude, longitude
 
-
+// ASK AARON ABOUT THE 18 API CALLS
 
 if ("geolocation" in navigator) {
     /* geolocation is available */
