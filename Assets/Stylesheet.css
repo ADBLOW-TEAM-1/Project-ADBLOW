@@ -4,24 +4,24 @@
  html,
  body {
    height: 100%;
+   font-family: 'Times New Roman', Times, serif;
  }
  
- html,
+ /* /* html,
  body,
  input,
  textarea,
  button {
    -webkit-font-smoothing: antialiased;
    -moz-osx-font-smoothing: grayscale;
-   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
- }
+   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); */
+
  
  
  /**
   * Header CSS
   */
  header {
-   position: fixed;
    top: 0;
    right: 0;
    left: 0;
@@ -38,6 +38,31 @@
  
  header table {
    width: 100%;
+ }
+
+ img {
+    height: 15%;
+    width: 15%;
+ }
+
+  h2 {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+     background-position: center;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    background-image:url("../highway.png");
+ } 
+ 
+ .mui-appbar {
+    background-color: black !important;
+ }
+
+ #location-btn {
+    width: 250px;
+    height: 50px;
+    font-size: 25px;
  }
  
  
@@ -60,7 +85,8 @@
  footer {
    box-sizing: border-box;
    height: 100px;
-   background-color: #eee;
+   background-color: rgb(2, 2, 2);
    border-top: 1px solid #e0e0e0;
    padding-top: 35px;
+   color: white !important;
  }
