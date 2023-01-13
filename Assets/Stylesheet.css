@@ -1,30 +1,18 @@
 h1 {
     background-color: lightskyblue;
 }
-/**
- * Body CSS
- */
+
+/* Body CSS*/
+
  html,
  body {
    height: 100%;
+   font-family: 'Times New Roman', Times, serif, !important;
  }
  
- html,
- body,
- input,
- textarea,
- button {
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
-   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
- }
+ /* Header CSS*/
  
- 
- /**
-  * Header CSS
-  */
  header {
-   position: fixed;
    top: 0;
    right: 0;
    left: 0;
@@ -37,33 +25,106 @@ h1 {
  
  header a {
    color: #fff;
+   font-weight: 900;
+   display: inline-block;
  }
  
  header table {
    width: 100%;
  }
+
+ img {
+    height: 20%;
+    width: 20%;
+ }
  
+  h2 {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+     background-position: center;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    background-image:url("../highway.png");
+ } 
  
- /**
-  * Content CSS
-  */
+ .mui-appbar {
+    background-color: black !important;
+ }
+
+ button {
+    border: 1px solid #212F35;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #D06373 ;
+   
+ }
+
+ button:hover {
+   border: 2px solid #212F35;
+   background-color: #31839E;
+   padding: 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 25px;
+   font-weight: bolder;
+   background-color: none;
+   color: black;
+   margin: 4px 2px;
+   border-radius: 8px;
+   transition: .6s;
+   overflow: hidden;
+   cursor: grab;
+ }
+
+ button:focus {
+    outline: none;
+ }
+
+ button:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5s;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+ }
+ /* Content CSS*/
+ 
  #content-wrapper {
-   min-height: 100%;
+   min-height: 200vh;
+   background-color: #212F35;
  
    /* sticky footer */
    box-sizing: border-box;
    margin-bottom: -100px;
    padding-bottom: 100px;
  }
+
+ h3 {
+    display: inline-block;
+    font-size:20px;
+    text-align: center;
+    font-weight: bold; 
+    color: #31839E;
+ }
  
+ /* Footer CSS*/
  
- /**
-  * Footer CSS
-  */
  footer {
    box-sizing: border-box;
    height: 100px;
-   background-color: #eee;
+   background-color: rgb(2, 2, 2);
    border-top: 1px solid #e0e0e0;
-   padding-top: 35px;
+   padding-top: 15px; 
+   color: white !important;
  }
