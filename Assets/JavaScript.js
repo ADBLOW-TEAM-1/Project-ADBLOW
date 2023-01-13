@@ -27,9 +27,4 @@ function waitForElement(){
   }
 }
 
-
-console.log(latitude)
-console.log(longitude)
-
-
 positionBtn.on('click', waitForElement)
