@@ -4,7 +4,7 @@
  html,
  body {
    height: 100%;
-   font-family: 'Times New Roman', Times, serif;
+   font-family: 'Times New Roman', Times, serif, !important;
  }
  
  
@@ -20,10 +20,13 @@
  
  header ul.mui-list--inline {
    margin-bottom: 0;
+   font-family: 'Times New Roman', Times, serif, !important;
  }
  
  header a {
    color: #fff;
+   font-weight: 900;
+   display: inline-block;
  }
  
  header table {
@@ -31,10 +34,10 @@
  }
 
  img {
-    height: 15%;
-    width: 15%;
+    height: 20%;
+    width: 20%;
  }
-
+ 
   h2 {
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -49,12 +52,53 @@
     background-color: black !important;
  }
 
- #location-btn {
-    width: 250px;
-    height: 50px;
-    font-size: 25px;
-    
+ button {
+    border: 1px solid #212F35;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #D06373 ;
+   
  }
+
+ button:hover {
+   border: 2px solid #212F35;
+   background-color: #31839E;
+   padding: 20px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 25px;
+   font-weight: bolder;
+   background-color: none;
+   color: black;
+   margin: 4px 2px;
+   border-radius: 8px;
+   transition: .6s;
+   overflow: hidden;
+   cursor: grab;
+ }
+
+ button:focus {
+    outline: none;
+ }
+
+ button:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255,255,255,.5);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .5s;
+    filter: blur(30px);
+    transform: translateX(-130px) skewX(-15deg);
+ }
+ 
  
  
  /**
@@ -62,13 +106,23 @@
   */
  #content-wrapper {
    min-height: 200vh;
+   background-color: #212F35;
+   
  
    /* sticky footer */
    box-sizing: border-box;
    margin-bottom: -100px;
    padding-bottom: 100px;
  }
- 
+
+ h3 {
+    display: inline-block;
+    font-size:20px;
+    text-align: center;
+    font-weight: bold; 
+    color: #31839E;
+ }
+
  
  /**
   * Footer CSS
@@ -78,6 +132,6 @@
    height: 100px;
    background-color: rgb(2, 2, 2);
    border-top: 1px solid #e0e0e0;
-   padding-top: 35px;
+   padding-top: 15px; 
    color: white !important;
  }
