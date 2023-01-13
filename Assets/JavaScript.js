@@ -1,6 +1,5 @@
 /* TomTom API key = ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6 */
 var locationButton = $("#locationBtn");
-var latitude, longitude
 
 function waitForElement(){
   if(typeof longitude !== "undefined"){
@@ -15,8 +14,9 @@ function waitForElement(){
 function getLocation() {
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(function(position) {
-    console.log("Latitude: " + position.coords.latitude);
-    console.log("Longitude: " + position.coords.longitude);
+    latitude = position.coords.latitude
+    longitude = position.coords.longitude
+    waitForElement()
     });
   } 
   else {
@@ -25,4 +25,6 @@ function getLocation() {
 }
 
 $(locationButton).on("click", getLocation);
-$(locationButton).on('click', waitForElement)
+
+
+
