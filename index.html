@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdn.muicss.com/mui-0.10.3/extra/mui-colors.min.css">
     <script src="https://cdn.muicss.com/mui-0.10.3/extra/mui-combined.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.22.1/maps/maps.css"/>
     <link rel="stylesheet" href="./Assets/Stylesheet.css"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="code hand.png">
     <title>A.D.B.L.O.W. APP</title>
+    <link rel="icon" href="./code-hand.png">
   </head>
   <body>
     <header class="mui-appbar mui--z1">
@@ -24,8 +25,8 @@
         <button type="button" id="locationBtn">Current Location</button>
         <h3>You will be able to see the "traffic future" when using this app.<br>Welcome To A.D.B.L.O.W.!</h3>
       </div>
-      <div>
-        <img id="mapImg">
+      <div id="map" class="map">
+
       </div>
     </div>
 
@@ -36,11 +37,12 @@
     </footer>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous">
-		</script>
-    <script src="Assets/JavaScript.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous">
+	</script>
+  <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.22.1/maps/maps-web.min.js"></script>
+  <script src="Assets/JavaScript.js"></script>
 </html>

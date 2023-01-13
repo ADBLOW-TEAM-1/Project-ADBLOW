@@ -16,6 +16,8 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(function(position) {
     latitude = position.coords.latitude
     longitude = position.coords.longitude
+    console.log(latitude)
+    console.log(longitude)
     waitForElement()
     });
   } 
@@ -26,5 +28,22 @@ function getLocation() {
 
 $(locationButton).on("click", getLocation);
 
+tt.setProductInfo('A.D.B.L.O.W.', '69')
 
+var map = tt.map({
+  key: "ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6",
+  container: "map",
+  center: [-114.2980608, 48.234496],
+  zoom: 12,
+  style: {
+    map: 'basic_main',
+    trafficIncidents: 'incidents_day',
+    trafficFlow: 'flow_relative'
+  },
+  stylesVisibility: {
+    trafficFlow: true,
+    trafficIncidents: true,
+    map: true
+  }
+})
 
