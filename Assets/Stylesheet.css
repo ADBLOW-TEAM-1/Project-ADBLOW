@@ -1,16 +1,17 @@
+h1 {
+    background-color: lightskyblue;
+}
 
- * Body CSS
- */
+/* Body CSS*/
+
  html,
  body {
    height: 100%;
    font-family: 'Times New Roman', Times, serif, !important;
  }
  
+ /* Header CSS*/
  
- /**
-  * Header CSS
-  */
  header {
    top: 0;
    right: 0;
@@ -20,7 +21,6 @@
  
  header ul.mui-list--inline {
    margin-bottom: 0;
-   font-family: 'Times New Roman', Times, serif, !important;
  }
  
  header a {
@@ -98,16 +98,11 @@
     filter: blur(30px);
     transform: translateX(-130px) skewX(-15deg);
  }
+ /* Content CSS*/
  
- 
- 
- /**
-  * Content CSS
-  */
  #content-wrapper {
    min-height: 200vh;
    background-color: #212F35;
-   
  
    /* sticky footer */
    box-sizing: border-box;
@@ -122,11 +117,9 @@
     font-weight: bold; 
     color: #31839E;
  }
-
  
- /**
-  * Footer CSS
-  */
+ /* Footer CSS*/
+ 
  footer {
    box-sizing: border-box;
    height: 100px;
