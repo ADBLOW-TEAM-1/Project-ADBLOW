@@ -46,4 +46,3 @@ function getLocation() {
 }
 
 $(locationButton).on("click", getLocation);
-
