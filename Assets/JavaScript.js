@@ -26,7 +26,6 @@ function getLocation() {
       container: "map",
       center: [longitude, latitude],
       zoom: 11,
-      interactive: false,
       style: {
         map: 'basic_main',
         trafficIncidents: 'incidents_day',
