@@ -1,8 +1,7 @@
 /* TomTom API key = ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6 */
 var locationButton = $("#locationBtn");
-tt.setProductInfo('A.D.B.L.O.W.', '69')
-var apiKey = "9245a40f3fa9510a8e08caac843d31d3";
-var apiPath = `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=${apikey}`;
+tt.setProductInfo('A.D.B.L.O.W.', '69');
+var apiPath = `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=9245a40f3fa9510a8e08caac843d31d3`;
 
 
 function waitForElement(){
@@ -64,5 +63,5 @@ function getForecast() {
     })
 
 }
-getForecast(, apiKey);
+$(locationButton).on("click", getForecast);
 
