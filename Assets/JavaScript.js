@@ -1,8 +1,9 @@
 /* TomTom API key = ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6 */
-var locationButton = $("#locationBtn");
+var positionBtn = $('#location-btn')
 tt.setProductInfo('A.D.B.L.O.W.', '69')
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 // if ("geolocation" in navigator) {
 //     /* geolocation is available */
@@ -27,6 +28,8 @@ tt.setProductInfo('A.D.B.L.O.W.', '69')
 //   }
 // }
 =======
+=======
+>>>>>>> e55b9406b57e1f2bcf751730bc2038c566329ec3
 
 function waitForElement(){
   waitForElement()
@@ -44,7 +47,10 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(function(position) {
     globalThis.latitude = position.coords.latitude
     globalThis.longitude = position.coords.longitude
+<<<<<<< HEAD
 >>>>>>> 35ae2e9a2ae0ce967b314e44d7a85dac88a5932d
+=======
+>>>>>>> e55b9406b57e1f2bcf751730bc2038c566329ec3
 
     var map = tt.map({
       key: "ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6",
@@ -71,4 +77,3 @@ function getLocation() {
 }
 
 $(locationButton).on("click", getLocation);
-
