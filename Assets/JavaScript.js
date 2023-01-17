@@ -2,6 +2,7 @@
 var locationButton = document.querySelector("button");
 
 
+
 $(locationButton).on("click", getLocation);
     console.log("location");
   function getLocation() {
@@ -29,3 +30,15 @@ $(locationButton).on("click", getLocation);
   }
   
   waitForElement(console.log("api"));
+
+  var map = tt.map({
+    key: "ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6",
+    container: "map",
+    center: [-96.9882686, 32.9627285],
+    zoom: 12,
+      map: "basic_main",
+      trafficIncidents: "vectorTilesFlow"
+
+
+
+  });
