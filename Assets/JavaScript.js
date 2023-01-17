@@ -1,5 +1,5 @@
 /* TomTom API key = ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6 */
-var locationButton = $("#locationBtn");
+var positionBtn = $('#location-btn')
 tt.setProductInfo('A.D.B.L.O.W.', '69')
 
 
