@@ -1,7 +1,7 @@
 /* TomTom API key = ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6 */
 var locationButton = $("#locationBtn");
 tt.setProductInfo('A.D.B.L.O.W.', '69');
-var apiPath = `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid=9245a40f3fa9510a8e08caac843d31d3`;
+
 
 
 function waitForElement(){
@@ -20,7 +20,7 @@ function getLocation() {
     navigator.geolocation.getCurrentPosition(function(position) {
     globalThis.latitude = position.coords.latitude
     globalThis.longitude = position.coords.longitude
-
+getForecast(position.coords.latitude, position.coords.longitude )
     var map = tt.map({
       key: "ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6",
       container: "map",
@@ -53,7 +53,8 @@ $(locationButton).on("click", getLocation);
 
 
 
-function getForecast() {
+function getForecast(lat, lon) {
+  var apiPath = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=9245a40f3fa9510a8e08caac843d31d3&units=imperial`;
     fetch(apiPath).then((res) => {
         return res.json()
     }).then((json) => {
@@ -63,5 +64,5 @@ function getForecast() {
     })
 
 }
-$(locationButton).on("click", getForecast);
+// $(locationButton).on("click", getForecast);
 
