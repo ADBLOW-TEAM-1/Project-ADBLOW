@@ -129,16 +129,12 @@ header table {
  #incidentList{
   background-color: #fff;
   text-align: center;
-  border: 5px red;
- }
-
- #incidentList br{
-  color: #212F35;
+  border-radius: 25px;
+  width: 96vw;
  }
 
  .incidents strong{
   font-size: 25px;
-  display: inline;
  }
  
  /* Footer CSS*/
