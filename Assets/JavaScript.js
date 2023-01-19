@@ -1,6 +1,22 @@
 /* TomTom API key = ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6 */
 var positionBtn = $('#locationBtn')
+var latitude, longitude;
+var longitudeCornerOne;
+var latitudeCornerOne;
+var longitudeCornerTwo;
+var latitudeCornerTwo;
+var boundingBox
 tt.setProductInfo('A.D.B.L.O.W.', '69')
+var API_KEY = "XlWteFUoMvEhiuGSPAtjft4NclNDtTwa"
+
+
+
+
+
+    
+
+      
+      
 
 function waitForElement(){
   waitForElement()
@@ -16,8 +32,9 @@ function waitForElement(){
 function getLocation() {
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(function(position) {
-    globalThis.latitude = position.coords.latitude
-    globalThis.longitude = position.coords.longitude
+    latitude = position.coords.latitude
+    longitude = position.coords.longitude
+
 
     var map = tt.map({
       key: "ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6",
@@ -35,6 +52,19 @@ function getLocation() {
         map: true
       }
     })
+    console.log(longitude,latitude)
+      longitudeCornerOne = longitude - .14
+      latitudeCornerOne = latitude - .22 
+      longitudeCornerTwo = longitude + .14
+      latitudeCornerTwo = latitude + .22 
+      
+        boundingBox = [longitudeCornerOne,latitudeCornerOne,longitudeCornerTwo, latitudeCornerTwo]
+
+        console.log(boundingBox)
+        
+        fetch(`https://api.tomtom.com/traffic/services/5/incidentDetails?key=${API_KEY}&bbox=${boundingBox}&fields={incidents{type,geometry{type,coordinates},properties{id,iconCategory,magnitudeOfDelay,events{description,code,iconCategory},startTime,endTime,from,to,length,delay,roadNumbers,timeValidity,probabilityOfOccurrence,numberOfReports,lastReportTime,tmc{countryCode,tableNumber,tableVersion,direction,points{location,offset}}}}}&language=en-US`)
+        .then(response => response.json())
+        .then(response => console.log(response))
     });
   } 
   else {
