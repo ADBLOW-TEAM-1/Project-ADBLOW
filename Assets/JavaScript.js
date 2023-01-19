@@ -6,6 +6,7 @@ var latitudeCornerOne;
 var longitudeCornerTwo;
 var latitudeCornerTwo;
 var boundingBox
+var incidentsArray = []
 tt.setProductInfo('A.D.B.L.O.W.', '69')
 var API_KEY = "XlWteFUoMvEhiuGSPAtjft4NclNDtTwa"
 
@@ -77,10 +78,27 @@ function getBoundingBox(longitude, latitude) {
       
   boundingBox = [longitudeCornerOne,latitudeCornerOne,longitudeCornerTwo, latitudeCornerTwo]
         
-  fetch(`https://api.tomtom.com/traffic/services/5/incidentDetails?key=${API_KEY}&bbox=${boundingBox}&fields={incidents{type,geometry{type,coordinates},properties{id,iconCategory,magnitudeOfDelay,events{description,code,iconCategory},startTime,endTime,from,to,length,delay,roadNumbers,timeValidity,probabilityOfOccurrence,numberOfReports,lastReportTime,tmc{countryCode,tableNumber,tableVersion,direction,points{location,offset}}}}}&language=en-US`)
+  fetch(`https://api.tomtom.com/traffic/services/5/incidentDetails?key=${API_KEY}&bbox=${boundingBox}&fields={incidents{type,geometry{type,coordinates},properties{iconCategory,magnitudeOfDelay,events{description,code},from,to,probabilityOfOccurrence}}}&language=en-US`)
   .then(response => response.json())
-  .then(response => console.log(response))
-
+  .then(response => {
+    getTrafficData(response)
+    console.log(response)
+    console.log(incidentsArray)
+  })
 }
 
 $(positionBtn).on("click", getLocation);
+
+function getTrafficData (response) {
+  for (var i = 0; i < response.incidents.length; i++) {
+    var trafficData = response.incidents[i].properties
+    incidentsArray.push({
+      from: trafficData.from,
+      to: trafficData.to,
+      probability: trafficData.probabilityOfOccurrence,
+      event: trafficData.events[0].description
+    })
+
+    
+  }
+}
