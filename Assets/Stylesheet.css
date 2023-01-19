@@ -1,77 +1,76 @@
-
 /* Body CSS*/
 
- html,
- body {
-   height: 100%;
-   font-family: 'Times New Roman', Times, serif, !important;
- }
- 
- /* Header CSS*/
- 
- header {
-   top: 0;
-   right: 0;
-   left: 0;
-   z-index: 2;
- }
- 
- header ul.mui-list--inline {
-   margin-bottom: 0;
- }
- 
- header a {
-   color: #fff;
-   font-weight: 900;
-   display: inline-block;
- }
- 
- header table {
+html,
+body {
+  height: 100%;
+  font-family: 'Times New Roman', Times, serif, !important;
+}
+
+/* Header CSS*/
+
+header {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+header ul.mui-list--inline {
+  margin-bottom: 0;
+}
+
+header a {
+  color: #fff;
+  font-weight: 900;
+  display: inline-block;
+}
+
+header table {
+  width: 100%;
+}
+
+ h2 {
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+    background-position: center;
+   background-size: cover;
+   height: 800px;
    width: 100%;
- }
+   background-image:url("../highway.png");
+} 
 
-  h2 {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-     background-position: center;
-    background-size: cover;
-    height: 800px;
-    width: 100%;
-    background-image:url("../highway.png");
- } 
- 
- .mui-appbar {
-    background-color: black !important;
- }
+.mui-appbar {
+   background-color: black !important;
+}
 
- button {
-    border: 1px solid #212F35;
-    padding: 20px;
-    text-align: center;
-    font-size: 18px;
-    border-radius: 8px;
-    font-weight: bold;
-    background-color: #D06373 ;
-    transition: .6s;
-   
- }
+button {
+   border: 1px solid #212F35;
+   padding: 20px;
+   text-align: center;
+   font-size: 18px;
+   border-radius: 8px;
+   font-weight: bold;
+   background-color: #D06373 ;
+   transition: .6s;
+  
+}
 
- button:focus {
-  outline: none;
+button:focus {
+ outline: none;
 }
 
 button:before {
-  content: "";
-  display: block;
-  position: absolute;
-  background: rgba(255,255,255,.5);
-  width: 30px;
-  height: 100%;
-  left: 0;
-  top: 0;
-  opacity: .5s;
-  filter: blur(30px);
-  transform: translateX(-130px) skewX(-15deg);
+ content: "";
+ display: block;
+ position: absolute;
+ background: rgba(255,255,255,.5);
+ width: 30px;
+ height: 100%;
+ left: 0;
+ top: 0;
+ opacity: .5s;
+ filter: blur(30px);
+ transform: translateX(-130px) skewX(-15deg);
 }
 
 button:after {
@@ -88,76 +87,76 @@ transform: translate(-100px) scaleX(-15deg);
 }
 
 button:hover {
-   border: 2px solid #212F35;
-   background-color: #31839E;
-   padding: 20px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 25px;
-   font-weight: bolder;
-   background-color: none;
-   color: black;
-   margin: 4px 2px;
-   border-radius: 8px;
-   transition: .6s;
-   overflow: hidden;
-   cursor: grab;
- }
+  border: 2px solid #212F35;
+  background-color: #31839E;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  font-weight: bolder;
+  background-color: none;
+  color: black;
+  margin: 4px 2px;
+  border-radius: 8px;
+  transition: .6s;
+  overflow: hidden;
+  cursor: grab;
+}
 
 
 button:hover:before {
-  transform: translateX(300px) skewX(-15deg);
-  opacity: .6;
-  transition: .7s;
- }
+ transform: translateX(300px) skewX(-15deg);
+ opacity: .6;
+ transition: .7s;
+}
 
 
 button:hover:after {
-  transform: translateX(300px) skewX(-15deg);
-  opacity: .6;
-  transition: .7s;
- }
+ transform: translateX(300px) skewX(-15deg);
+ opacity: .6;
+ transition: .7s;
+}
 
 
- 
- /* Content CSS*/
- 
- #content-wrapper {
-   min-height: 200vh;
-   background-color: #212F35;
- 
-   /* sticky footer */
-   box-sizing: border-box;
-   margin-bottom: -100px;
-   padding-bottom: 100px;
- }
 
- h3 {
-    display: inline-block;
-    font-size:20px;
-    text-align: center;
-    font-weight: bold; 
-    color: #31839E;
- }
- 
- /* Footer CSS*/
- 
- footer {
-   box-sizing: border-box;
-   height: 100px;
-   background-color: rgb(2, 2, 2);
-   border-top: 1px solid #e0e0e0;
-   padding-top: 15px; 
-   color: white !important;
- }
+/* Content CSS*/
 
- #landingImg {
-  height: 20%;
-  width: 20%;
+#content-wrapper {
+  min-height: 200vh;
+  background-color: #212F35;
+
+  /* sticky footer */
+  box-sizing: border-box;
+  margin-bottom: -100px;
+  padding-bottom: 100px;
+}
+
+h3 {
+   display: inline-block;
+   font-size:20px;
+   text-align: center;
+   font-weight: bold; 
+   color: #31839E;
+}
+
+/* Footer CSS*/
+
+footer {
+  box-sizing: border-box;
+  height: 100px;
+  background-color: rgb(2, 2, 2);
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px; 
+  color: white !important;
+}
+
+#landingImg {
+ height: 20%;
+ width: 20%;
 }
 
 #map {
-  width: 70vw;
-  height: 70vh;
+ width: 70vw;
+ height: 70vh;
 }
