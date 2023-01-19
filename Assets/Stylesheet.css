@@ -110,7 +110,7 @@ header table {
    margin-bottom: -100px;
    padding-bottom: 100px;
  }
-
+ 
  h3 {
     display: inline-block;
     font-size:20px;
@@ -145,6 +145,19 @@ header table {
   font-weight: bold;
   margin-right: 10px;
   color: white !important;
+}
+
+.mui-dropdown_menu{
+  justify-content: center;
+}
+
+#savedCity {
+  justify-content: center;
+  align-items: center;
+}
+
+#hide {
+  display: none;
 }
 
 .container-info {
