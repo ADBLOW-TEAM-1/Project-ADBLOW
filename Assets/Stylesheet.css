@@ -57,10 +57,16 @@ header table {
 
  #incidentList {
   border-radius: 3px;
-  border: 2px solid black;
-  width: 100%;
+  width: 90%;
   margin: 20px;
   text-align: left;
+  overflow-y:scroll;
+  height: 350px;
+  color: white !important;
+  font-size: 26px;
+  border: 1px solid #31839E;
+  margin-left: auto;
+  margin-right: auto;
  }
 
  button {
@@ -127,9 +133,8 @@ header table {
  }
 
  #incidentList{
-  background-color: #fff;
+  background-color: #212F35;
   text-align: center;
-  border: 5px red;
  }
 
  #incidentList br{
@@ -160,12 +165,13 @@ header table {
 
 .weather-card {
   text-align: center;
-  font-size: 75px;
+  font-size: 60px;
   width: 500px;
   height: 500px;
   position: relative;
   font-weight: bold;
   margin-right: 10px;
+  color: white !important;
 }
 
 .container-info {
