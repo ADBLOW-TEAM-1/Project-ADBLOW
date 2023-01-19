@@ -125,6 +125,21 @@ header table {
     font-weight: bold; 
     color: #31839E;
  }
+
+ #incidentList{
+  background-color: #fff;
+  text-align: center;
+  border: 5px red;
+ }
+
+ #incidentList br{
+  color: #212F35;
+ }
+
+ .incidents strong{
+  font-size: 25px;
+  display: inline;
+ }
  
  /* Footer CSS*/
  
