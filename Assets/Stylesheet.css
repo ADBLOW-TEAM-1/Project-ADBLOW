@@ -157,6 +157,7 @@ footer {
 }
 
 #map {
- width: 70vw;
- height: 70vh;
+  width: 70%;
+  height: 65vh;
+  margin: 10px;
 }
