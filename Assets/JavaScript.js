@@ -24,7 +24,8 @@ function getLocation() {
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(function(position) {
 
-    getWeather(position.coords.latitude, position.coords.longitude )
+    getWeather(position.coords.latitude, position.coords.longitude)
+    getBoundingBox(position.coords.longitude, position.coords.latitude)
 
     latitude = position.coords.latitude
     longitude = position.coords.longitude
@@ -44,24 +45,10 @@ function getLocation() {
         trafficIncidents: true,
         map: true
       }
-    })
-    console.log(longitude,latitude)
-      longitudeCornerOne = longitude - .14
-      latitudeCornerOne = latitude - .22 
-      longitudeCornerTwo = longitude + .14
-      latitudeCornerTwo = latitude + .22 
-      
-        boundingBox = [longitudeCornerOne,latitudeCornerOne,longitudeCornerTwo, latitudeCornerTwo]
-
-        console.log(boundingBox)
-        
-        fetch(`https://api.tomtom.com/traffic/services/5/incidentDetails?key=${API_KEY}&bbox=${boundingBox}&fields={incidents{type,geometry{type,coordinates},properties{id,iconCategory,magnitudeOfDelay,events{description,code,iconCategory},startTime,endTime,from,to,length,delay,roadNumbers,timeValidity,probabilityOfOccurrence,numberOfReports,lastReportTime,tmc{countryCode,tableNumber,tableVersion,direction,points{location,offset}}}}}&language=en-US`)
-        .then(response => response.json())
-        .then(response => console.log(response))
-    });
-     } else {
+    })});
+  } else {
         console.log("Geolocation is not available.");
-    }
+  }
 };
 
 function getWeather(lat, lon) {
@@ -81,18 +68,19 @@ function getWeather(lat, lon) {
 
 };
 
-// function getData(value) {
-//   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=9245a40f3fa9510a8e08caac843d31d3&units=imperial`)
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (weather) {
-//     document.querySelector("#city").innerHTML = weather.name;
-//   })
-//   .catch(function (err) {
-//       console.log(err);
-//   });
+function getBoundingBox(longitude, latitude) {
 
-// }
+  longitudeCornerOne = longitude - .14
+  latitudeCornerOne = latitude - .22 
+  longitudeCornerTwo = longitude + .14
+  latitudeCornerTwo = latitude + .22 
+      
+  boundingBox = [longitudeCornerOne,latitudeCornerOne,longitudeCornerTwo, latitudeCornerTwo]
+        
+  fetch(`https://api.tomtom.com/traffic/services/5/incidentDetails?key=${API_KEY}&bbox=${boundingBox}&fields={incidents{type,geometry{type,coordinates},properties{id,iconCategory,magnitudeOfDelay,events{description,code,iconCategory},startTime,endTime,from,to,length,delay,roadNumbers,timeValidity,probabilityOfOccurrence,numberOfReports,lastReportTime,tmc{countryCode,tableNumber,tableVersion,direction,points{location,offset}}}}}&language=en-US`)
+  .then(response => response.json())
+  .then(response => console.log(response))
+
+}
 
 $(positionBtn).on("click", getLocation);
