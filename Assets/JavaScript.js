@@ -13,6 +13,7 @@ var API_KEY = "XlWteFUoMvEhiuGSPAtjft4NclNDtTwa"
 
 
 
+
     
 
       
@@ -27,14 +28,16 @@ function waitForElement(){
   else{
       setTimeout(waitForElement, 250);
   }
-}
+};
     
 function getLocation() {
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(function(position) {
+
+    getWeather(position.coords.latitude, position.coords.longitude )
+
     latitude = position.coords.latitude
     longitude = position.coords.longitude
-
 
     var map = tt.map({
       key: "ZpKOglbBbjaHIp34XAJCbc3fMUOpTKg6",
@@ -66,10 +69,40 @@ function getLocation() {
         .then(response => response.json())
         .then(response => console.log(response))
     });
-  } 
-  else {
-    console.log("Geolocation is not available.");
-  }
-}
+     } else {
+        console.log("Geolocation is not available.");
+    }
+};
+
+function getWeather(lat, lon) {
+  var apiPath = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=9245a40f3fa9510a8e08caac843d31d3&units=imperial`;
+    fetch(apiPath).then((res) => {
+        return res.json()
+    }).then((json) => {
+        console.log(json);
+        document.querySelector("#city-name").innerHTML = json.name;
+        document.querySelector("#temp").innerHTML = json.main.temp;
+        document.querySelector("#weather").innerHTML = json.weather[0].description;
+        document.querySelector("#wind").innerHTML = json.wind.speed;
+    }).catch((err) => {
+        console.log(err.message);
+    })
+
+
+};
+
+// function getData(value) {
+//   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=9245a40f3fa9510a8e08caac843d31d3&units=imperial`)
+//   .then(function (response) {
+//     return response.json();
+//   })
+//   .then(function (weather) {
+//     document.querySelector("#city").innerHTML = weather.name;
+//   })
+//   .catch(function (err) {
+//       console.log(err);
+//   });
+
+// }
 
 $(positionBtn).on("click", getLocation);
