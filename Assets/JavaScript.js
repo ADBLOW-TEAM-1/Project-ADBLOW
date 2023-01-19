@@ -9,16 +9,6 @@ var boundingBox
 tt.setProductInfo('A.D.B.L.O.W.', '69')
 var API_KEY = "XlWteFUoMvEhiuGSPAtjft4NclNDtTwa"
 
-
-
-
-
-
-    
-
-      
-      
-
 function waitForElement(){
   waitForElement()
   if(typeof longitude !== "undefined"){
