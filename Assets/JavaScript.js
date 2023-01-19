@@ -7,6 +7,7 @@ var longitudeCornerTwo;
 var latitudeCornerTwo;
 var boundingBox
 var incidentsArray = []
+var dropMenu = $('.mui-dropdown')
 tt.setProductInfo('A.D.B.L.O.W.', '69')
 var API_KEY = "XlWteFUoMvEhiuGSPAtjft4NclNDtTwa"
 
@@ -62,13 +63,18 @@ function getWeather(lat, lon) {
         document.querySelector("#temp").innerHTML = 'Temperature: ' + json.main.temp + '\xB0';
         document.querySelector("#weather").innerHTML = 'Weather: ' + json.weather[0].description;
         document.querySelector("#wind").innerHTML = 'Wind Speed: ' + json.wind.speed + ' MPH';
+          localStorage.setItem('cityName', json.name)
+          $('.mui-dropdown').show()
     }).catch((err) => {
         console.log(err.message);
     })
-
-
 };
 
+function getSavedCity(){
+  $('#savedCity').append(`<li>${localStorage.getItem('cityName')}`);
+}
+
+getSavedCity();
 function getBoundingBox(longitude, latitude) {
 
   longitudeCornerOne = longitude - .14
@@ -101,4 +107,3 @@ function getTrafficData (response) {
   $('#incidentsInput').append("<li>" + trafficData.events[0].description + ' at ' + trafficData.from + ' to ' + trafficData.to + '. Probability is ' + trafficData.probabilityOfOccurrence)
   }
 }
-
