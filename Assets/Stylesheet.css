@@ -1,31 +1,39 @@
 /* Body CSS*/
+html,
+body {
+  height: 100%;
+  font-family: 'Times New Roman', Times, serif, !important;
+}
 
- html,
- body {
-   height: 100%;
-   font-family: 'Times New Roman', Times, serif, !important;
- }
- 
- /* Header CSS*/
- 
- header {
-   top: 0;
-   right: 0;
-   left: 0;
-   z-index: 2;
- }
- 
- header ul.mui-list--inline {
-   margin-bottom: 0;
- }
- 
- header a {
-   color: #fff;
-   font-weight: 900;
-   display: inline-block;
- }
- 
- header table {
+/* Header CSS*/
+
+header {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
+header ul.mui-list--inline {
+  margin-bottom: 0;
+}
+
+header a {
+  color: #fff;
+  font-weight: 900;
+  display: inline-block;
+}
+
+header table {
+  width: 100%;
+}
+
+ h2 {
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+    background-position: center;
+   background-size: cover;
+   height: 800px;
    width: 100%;
  }
 
@@ -58,20 +66,16 @@
     transition: .6s;
    
  }
-
+ 
  button:hover {
    border: 2px solid #212F35;
    background-color: #31839E;
    padding: 20px;
    text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 25px;
-   font-weight: bolder;
-   background-color: none;
-   color: black;
-   margin: 4px 2px;
+   font-size: 18px;
    border-radius: 8px;
+   font-weight: bold;
+   background-color: #D06373 ;
    transition: .6s;
    overflow: hidden;
    cursor: grab;
