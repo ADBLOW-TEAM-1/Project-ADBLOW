@@ -128,4 +128,19 @@
 #map {
   width: 70%;
   height: 65vh;
+  margin: 10px;
+}
+
+.weather-card {
+  text-align: center;
+  font-size: 75px;
+  width: 500px;
+  height: 500px;
+  position: relative;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.container-info {
+  display: flex;
 }
