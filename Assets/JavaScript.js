@@ -58,10 +58,10 @@ function getWeather(lat, lon) {
         return res.json()
     }).then((json) => {
         console.log(json);
-        document.querySelector("#city-name").innerHTML = json.name;
-        document.querySelector("#temp").innerHTML = json.main.temp;
-        document.querySelector("#weather").innerHTML = json.weather[0].description;
-        document.querySelector("#wind").innerHTML = json.wind.speed;
+        document.querySelector("#city-name").innerHTML = 'City: ' + json.name;
+        document.querySelector("#temp").innerHTML = 'Temperature: ' + json.main.temp + '\xB0';
+        document.querySelector("#weather").innerHTML = 'Weather: ' + json.weather[0].description;
+        document.querySelector("#wind").innerHTML = 'Wind Speed: ' + json.wind.speed + ' MPH';
     }).catch((err) => {
         console.log(err.message);
     })
@@ -98,7 +98,7 @@ function getTrafficData (response) {
       probability: trafficData.probabilityOfOccurrence,
       event: trafficData.events[0].description
     })
-
-    
+  $('#incidentsInput').append("<li>" + trafficData.events[0].description + ' at ' + trafficData.from + ' to ' + trafficData.to + '. Probability is ' + trafficData.probabilityOfOccurrence)
   }
 }
+
