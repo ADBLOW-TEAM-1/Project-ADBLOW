@@ -2,8 +2,6 @@
 var positionBtn = $('#locationBtn')
 tt.setProductInfo('A.D.B.L.O.W.', '69')
 
-
-
 function waitForElement(){
   waitForElement()
   if(typeof longitude !== "undefined"){
@@ -45,5 +43,3 @@ function getLocation() {
 }
 
 $(positionBtn).on("click", getLocation);
-
-$(positionBtn).on("click", console.log('click'));
