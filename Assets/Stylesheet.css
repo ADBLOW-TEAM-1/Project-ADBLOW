@@ -138,7 +138,7 @@ header table {
 
 .weather-card {
   text-align: center;
-  font-size: 60px;
+  font-size: 40px;
   width: 500px;
   height: 500px;
   position: relative;
@@ -146,6 +146,14 @@ header table {
   margin-right: 10px;
   color: white !important;
 }
+#city-name {
+  background-color: #31839E;
+}
+#weather {
+  background-color: #31839E;
+}
+
+
 
 .mui-dropdown_menu{
   justify-content: center;
@@ -156,9 +164,7 @@ header table {
   align-items: center;
 }
 
-#hide {
-  display: none;
-}
+
 
 .container-info {
   display: flex;
